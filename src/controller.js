@@ -36,4 +36,19 @@ $(document).ready(function(){
     thermostat.reset();
     updateTemperatureOutput();
   });
+
+  var jQueryFetch = function (contentHolder) {
+    var response = $.get('http://api.openweathermap.org/data/2.5/weather?q=newyork&APPID=6457bac87f96f21776277d3368399a82');
+    console.log(response);
+    console.log(contentHolder);
+    console.log(responseText);
+    contentHolder.html(response.responseText);
+  }
+
+  
+  jQueryFetch($('#output-weather'))
+
+
+
 });
+
