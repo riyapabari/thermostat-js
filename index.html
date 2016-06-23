@@ -10,7 +10,16 @@
   <body>
     <div class="wrapper">
       <div class="weather-display">
-        <span id="output-weather"></span>
+        <select id="city-change">
+          <option value="london">London</option>
+          <option value="newyork">New York</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="milan">Milan</option>
+          <option value="sydney">Sydney</option>
+          <option value="hongkong">Hong Kong</option>
+        </select><br>
+        Current Temperature in <span id="output-weather"></span>
       </div>
       <div class="thermostat-status">
         Temperature: <span id="output-temperature"></span>&#x2103;<br>

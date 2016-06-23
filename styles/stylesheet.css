@@ -31,6 +31,10 @@ button:focus {
 	text-align: center;
 }
 
+.weather-display {
+	padding: 50px;
+}
+
 .low {
   color: #00cc99;
 }

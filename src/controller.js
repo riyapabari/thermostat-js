@@ -37,18 +37,19 @@ $(document).ready(function(){
     updateTemperatureOutput();
   });
 
-  var jQueryFetch = function (contentHolder) {
-    var response = $.get('http://api.openweathermap.org/data/2.5/weather?q=newyork&APPID=6457bac87f96f21776277d3368399a82');
-    console.log(response);
-    console.log(contentHolder);
-    console.log(responseText);
-    contentHolder.html(response.responseText);
-  }
+  var ajax = function(city) {
+    $.getJSON('http:api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=6457bac87f96f21776277d3368399a82', function(data) {
+      console.log(data);
+      $('#output-weather').html(data.name + ': ' + (data.main.temp - 273).toFixed(1) + '&deg;C')
+    });
+  };
 
-  
-  jQueryFetch($('#output-weather'))
+  ajax('london');
 
-
+  $('#city-change').on('change', function(data) {
+    console.log(data.currentTarget.value);
+    ajax(data.currentTarget.value);
+  });
 
 });
 
